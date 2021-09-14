@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "lint": "prettier --ignore-unknown --write && npx eslint src/* --fix"
+    "lint": "prettier src/*.tsx --ignore-unknown --write && npx eslint src/* --fix"
   },
   "eslintConfig": {
     "extends": [

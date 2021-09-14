@@ -1,0 +1,28 @@
+image: node:latest
+
+stages:
+  - lint
+
+eslint:
+  stage: lint
+  script:
+    # install ESLint in container
+    - |
+      npm install eslint \
+      eslint-config-airbnb \
+      eslint-config-prettier \
+      eslint-plugin-flowtype \
+      eslint-plugin-import \
+      eslint-plugin-jsx-a11y \
+      eslint-plugin-prettier \
+      eslint-plugin-react
+    # run ESLint
+    - node_modules/.bin/eslint src/*.tsx --max-warnings=0
+
+prettier:
+  stage: lint
+  script:
+    # install prettier in container
+    - npm install -g prettier
+    # run prettier checks
+    - prettier -c src/*.tsx
