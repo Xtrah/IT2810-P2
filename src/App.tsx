@@ -1,7 +1,9 @@
+import Charts from './Charts';
+
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <Charts />
     </div>
   );
 }
