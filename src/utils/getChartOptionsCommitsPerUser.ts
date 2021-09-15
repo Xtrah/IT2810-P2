@@ -17,7 +17,6 @@ function countCommitsPerName(commitsData: Commit[]): Series {
   return commitSeries;
 }
 
-// https://www.highcharts.com/docs/getting-started/your-first-chart
 export function getChartOptionsCommitsPerUser(commitsData: Commit[]) {
   const chartOptionsCommitsPerUser = {
     chart: {

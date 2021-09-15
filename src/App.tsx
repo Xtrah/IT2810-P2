@@ -1,9 +1,9 @@
-import Charts from './Charts';
+import Statistics from './Statistics';
 
 function App() {
   return (
     <div>
-      <Charts />
+      <Statistics />
     </div>
   );
 }
