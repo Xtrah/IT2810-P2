@@ -1,29 +1,6 @@
-import { Commit } from '../types/gitlabDataTypes';
-import { Series } from '../types/highchartsTypes';
-import { getUniqueCommitContributors } from './getUniqueCommitContributors';
-
-export const getChartOptionsCommitsPerUser = (commitsData: Commit[]) => {
-  const chartOptionsCommitsPerUser = {
-    chart: {
-      type: 'column',
-    },
-    title: {
-      text: 'Commits',
-    },
-    xAxis: {
-      categories: ['Users'],
-    },
-    yAxis: {
-      title: {
-        text: 'Commits',
-      },
-    },
-    colors: ['orange'],
-    series: countCommitsPerName(commitsData),
-  };
-
-  return chartOptionsCommitsPerUser;
-};
+import { Commit } from "../types/gitlabDataTypes";
+import { Series } from "../types/highchartsTypes";
+import getUniqueCommitContributors from "./getUniqueCommitContributors";
 
 const countCommitsPerName = (commitsData: Commit[]): Series => {
   // Per unique name, count contribution.
@@ -39,3 +16,28 @@ const countCommitsPerName = (commitsData: Commit[]): Series => {
 
   return commitSeries;
 };
+
+const getChartOptionsCommitsPerUser = (commitsData: Commit[]) => {
+  const chartOptionsCommitsPerUser = {
+    chart: {
+      type: "column",
+    },
+    title: {
+      text: "Commits",
+    },
+    xAxis: {
+      categories: ["Users"],
+    },
+    yAxis: {
+      title: {
+        text: "Commits",
+      },
+    },
+    colors: ["orange"],
+    series: countCommitsPerName(commitsData),
+  };
+
+  return chartOptionsCommitsPerUser;
+};
+
+export default getChartOptionsCommitsPerUser;

@@ -1,33 +1,35 @@
-import { Issue } from '../types/gitlabDataTypes';
+import { Issue } from "../types/gitlabDataTypes";
 
-export const getChartOptionsIssuesStatus = (issuesData: Issue[]) => ({
+const getChartOptionsIssuesStatus = (issuesData: Issue[]) => ({
   chart: {
-    type: 'column',
+    type: "column",
   },
   title: {
-    text: 'Issue status',
+    text: "Issue status",
   },
   xAxis: {
-    categories: ['Issue status'],
+    categories: ["Issue status"],
   },
   yAxis: {
     title: {
-      text: 'Issues',
+      text: "Issues",
     },
   },
-  colors: ['orange'],
+  colors: ["orange"],
   series: [
     {
-      name: 'Open',
+      name: "Open",
       data: [
         issuesData.filter((issue: Issue) => issue.closed_at === null).length,
       ],
     },
     {
-      name: 'Closed',
+      name: "Closed",
       data: [
         issuesData.filter((issue: Issue) => issue.closed_at !== null).length,
       ],
     },
   ],
 });
+
+export default getChartOptionsIssuesStatus;

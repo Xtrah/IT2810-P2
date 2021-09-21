@@ -1,9 +1,9 @@
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
-import { getChartOptionsCommitsPerUser } from './utils/getChartOptionsCommitsPerUser';
-import { getChartOptionsIssuesStatus } from './utils/getChartOptionsIssuesStatus';
-import { Commit, Issue } from './types/gitlabDataTypes';
-import Section from './components/Section';
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+import getChartOptionsCommitsPerUser from "./utils/getChartOptionsCommitsPerUser";
+import getChartOptionsIssuesStatus from "./utils/getChartOptionsIssuesStatus";
+import { Commit, Issue } from "./types/gitlabDataTypes";
+import Section from "./components/Section";
 
 interface Props {
   issuesData: Issue[];
