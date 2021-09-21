@@ -1,7 +1,11 @@
-import React from "react";
+import Statistics from "./Statistics";
 
 function App() {
-  return <div>Hello world!</div>;
+  return (
+    <div>
+      <Statistics />
+    </div>
+  );
 }
 
 export default App;
