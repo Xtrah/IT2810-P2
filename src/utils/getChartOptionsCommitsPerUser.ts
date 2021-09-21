@@ -2,22 +2,7 @@ import { Commit } from '../types/gitlabDataTypes';
 import { Series } from '../types/highchartsTypes';
 import { getUniqueCommitContributors } from './getUniqueCommitContributors';
 
-function countCommitsPerName(commitsData: Commit[]): Series {
-  // Per unique name, count contribution.
-  const commitSeries = getUniqueCommitContributors(commitsData).map(
-    (username: string) => ({
-      name: username,
-      data: [
-        commitsData.filter((commit: Commit) => commit.author_name === username)
-          .length,
-      ],
-    })
-  );
-
-  return commitSeries;
-}
-
-export function getChartOptionsCommitsPerUser(commitsData: Commit[]) {
+export const getChartOptionsCommitsPerUser = (commitsData: Commit[]) => {
   const chartOptionsCommitsPerUser = {
     chart: {
       type: 'column',
@@ -38,4 +23,19 @@ export function getChartOptionsCommitsPerUser(commitsData: Commit[]) {
   };
 
   return chartOptionsCommitsPerUser;
-}
+};
+
+const countCommitsPerName = (commitsData: Commit[]): Series => {
+  // Per unique name, count contribution.
+  const commitSeries = getUniqueCommitContributors(commitsData).map(
+    (username: string) => ({
+      name: username,
+      data: [
+        commitsData.filter((commit: Commit) => commit.author_name === username)
+          .length,
+      ],
+    })
+  );
+
+  return commitSeries;
+};
