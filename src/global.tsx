@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import { ThemeType } from './components/Theme/ThemeType';
+import { createGlobalStyle } from "styled-components";
+import { ThemeType } from "./components/Theme/ThemeType";
 
-export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
+const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
 
 *,
 *::after,
@@ -27,3 +27,5 @@ body {
     transition: all 0.25s linear;
 }
 `;
+
+export default GlobalStyles;

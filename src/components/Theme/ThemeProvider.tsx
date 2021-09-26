@@ -1,7 +1,7 @@
-import React, { useState, ReactNode, SetStateAction, Dispatch } from 'react';
-import { ThemeTypes } from '../../utils/themeutils';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './ThemeStyles';
+import React, { useState, ReactNode, SetStateAction, Dispatch } from "react";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import ThemeTypes from "../../utils/themeutils";
+import { lightTheme, darkTheme } from "./ThemeStyles";
 
 export interface IThemeContext {
   theme: string;

@@ -1,6 +1,6 @@
-import { useContext } from 'react';
-import { ThemeContext } from './ThemeProvider';
-import ThemeTypes from '../../utils/themeutils';
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeProvider";
+import ThemeTypes from "../../utils/themeutils";
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -11,7 +11,7 @@ const ThemeToggle = () => {
       : setTheme(ThemeTypes.LIGHT);
 
   return (
-    <button onClick={toggleTheme} aria-label="Toggle color-mode">
+    <button onClick={toggleTheme} aria-label="Toggle color-mode" type="button">
       Toggle
     </button>
   );
