@@ -4,5 +4,5 @@ export interface Commit {
 }
 
 export interface Issue {
-  closed_at: string;
+  closed_at: string | null;
 }
