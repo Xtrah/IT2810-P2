@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { ThemeType } from './ThemeType';
+import { ThemeType } from './components/Theme/ThemeType';
 
 
 export const GlobalStyles = createGlobalStyle<{theme: ThemeType}>`
@@ -14,7 +14,7 @@ body {
     align-items: center;
     display: flex;
     background: ${({ theme }) => theme.body};
-    color: ${(props) => props.theme.text};
+    color: ${({ theme }) => theme.text};
     flex-direction: column;
     justify-content: center;
     height: 100vh;
