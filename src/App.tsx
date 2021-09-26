@@ -1,14 +1,13 @@
 import { ThemeProvider } from './components/Theme/ThemeProvider';
 import { GlobalStyles } from './global';
-import ThemeToggle from "./components/Theme/ThemeToggle";
-
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <ThemeProvider>
         <>
           <GlobalStyles />
-          <ThemeToggle/>
+          <Navbar/>
           <h1>Bolle-title</h1>
         </>
     </ThemeProvider>
