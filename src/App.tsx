@@ -1,6 +1,13 @@
+import styled from "styled-components";
 import { ThemeProvider } from "./components/Theme/ThemeProvider";
 import GlobalStyles from "./global";
 import Navbar from "./components/Navbar";
+import Statistics from "./Statistics";
+
+const StatisticsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 function App() {
   return (
@@ -8,7 +15,9 @@ function App() {
       <>
         <GlobalStyles />
         <Navbar />
-        <h1>Bolle-title</h1>
+        <StatisticsWrapper>
+          <Statistics />
+        </StatisticsWrapper>
       </>
     </ThemeProvider>
   );

@@ -1,6 +1,8 @@
 import { ThemeType } from "./ThemeType";
 
 export const lightTheme: ThemeType = {
+  primary: "#F17A0C",
+  primaryDark: "#a05107",
   body: "#EFEFEF",
   card: "#FFFFFF",
   text: "#363537",
@@ -10,6 +12,8 @@ export const lightTheme: ThemeType = {
 };
 
 export const darkTheme: ThemeType = {
+  primary: "#F17A0C",
+  primaryDark: "#a05107",
   body: "#130900",
   card: "#3F2004",
   text: "#FAFAFA",
