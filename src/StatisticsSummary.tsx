@@ -9,12 +9,13 @@ import getUniqueCommitContributors from "./utils/getUniqueCommitContributors";
 
 const DataParagraph = styled.p`
   display: inline;
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 600;
 `;
 
 const SummaryTitle = styled.h1`
-  font-size: 14px;
-  color: grey;
+  font-size: 16px;
+  color: ${({ theme }) => theme.text};
   margin: 0;
   margin-bottom: 1em;
 `;
@@ -23,23 +24,30 @@ const SummaryList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  & li {
+    margin: 1em 0;
+  }
 `;
 
 const CheckIcon = styled(CheckCircle)`
   vertical-align: sub;
+  fill: ${({ theme }) => theme.primary};
 `;
 
 const UserIcon = styled(PersonCircle)`
   vertical-align: sub;
+  fill: ${({ theme }) => theme.primary};
 `;
 
 const ExclamationIcon = styled(ExclamationCircle)`
   vertical-align: sub;
+  fill: ${({ theme }) => theme.primary};
 `;
 
-const ColoredSpan = styled.span`
-  color: orange;
-  margin: 0.25em;
+const KeyNumber = styled.span`
+  color: ${({ theme }) => theme.primary};
+  margin: 0 0.2em;
+  font-size: 34px;
 `;
 
 const Text = styled.p`
@@ -67,23 +75,23 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
       <SummaryTitle>Current status of repository</SummaryTitle>
       <SummaryList>
         <li>
-          <ExclamationIcon size={24} fill="orange" />
+          <ExclamationIcon size={34} />
           <DataParagraph>
-            <ColoredSpan>{issuesData.length}</ColoredSpan>Total issues
+            <KeyNumber>{issuesData.length}</KeyNumber>Total issues
           </DataParagraph>
         </li>
         <li>
-          <CheckIcon size={24} fill="orange" />
+          <CheckIcon size={34} />
           <DataParagraph>
-            <ColoredSpan>{commitsData.length}</ColoredSpan>Total commits
+            <KeyNumber>{commitsData.length}</KeyNumber>Total commits
           </DataParagraph>
         </li>
         <li>
-          <UserIcon size={24} fill="orange" />
+          <UserIcon size={34} />
           <DataParagraph>
-            <ColoredSpan>
+            <KeyNumber>
               {getUniqueCommitContributors(commitsData).length}
-            </ColoredSpan>
+            </KeyNumber>
             Total contributors
           </DataParagraph>
         </li>

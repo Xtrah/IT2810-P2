@@ -9,8 +9,10 @@ import filterDataOnDate from "./utils/filterDataOnDate";
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  justify-content: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1060px) {
     flex-direction: row;
   }
 `;
