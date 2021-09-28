@@ -55,7 +55,7 @@ interface Props {
 }
 
 function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
-  const initialDaysToInclude = "14";
+  const initialDaysToInclude = "99999";
   const [daysToIncludeData, setDaysToIncludeData] = useSessionStorage(
     "daysToInclude",
     initialDaysToInclude
