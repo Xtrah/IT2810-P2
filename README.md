@@ -47,7 +47,7 @@ List used components from external libraries.
 
 #### Fetching GitLab data
 
-How API data was loaded using AJAX: fetch() or external library
+We chose to use the built in function `fetch` for data fetching. We considered the external library `axios`, which allows for automatic transforming of json-data. On the contrary, with `fetch`, we have to do a two-step-process to first make the request, then call the json-method. This can make the functions cumbersome, adding more boilerplate lessening the readability and developer speed. Since there wouldn't be many fetch-definitions in the project (we only defined one), we found `fetch` to be suitable for our needs. This avoided adding more dependencies to the project.
 
 #### Responsive layout
 
@@ -60,10 +60,14 @@ How API data was loaded using AJAX: fetch() or external library
 
 ### Using Jest
 
+For snapshot test react-test-renderer was used. This makes a json-version of a component, letting you check if earlier representation matches the new representation of the component. We added snapshot tests checking if `StatisticsSummary` rendered as expected with or without data.
+
+For Jest tests we tested whether a utility function `getUniqueCommitContributors` gave expected output. We also made use of the pre-installed testing library from react to test whether `App` rendered without crashing.
+
 ### Testing UI and responsiveness
 
-Snapshot
+Testing on 3 different units.
 
 ## ⚗️ Pipeline
 
-What the pipeline does
+To ensure good code quality we made use of prettier and eslint. These are enforced with husky, but also checked in the CI-pipeline before merge. We also run the test script to make sure functionality is as expected.
