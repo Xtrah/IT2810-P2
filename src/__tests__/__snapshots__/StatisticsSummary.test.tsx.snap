@@ -121,6 +121,11 @@ exports[`should render summary with 0 total commits, contributors and issues whe
       last 30 days
     </option>
     <option
+      value="14"
+    >
+      last 14 days
+    </option>
+    <option
       value="7"
     >
       last 7 days
@@ -248,6 +253,11 @@ exports[`should render summary with correct count when lists of data 1`] = `
       value="30"
     >
       last 30 days
+    </option>
+    <option
+      value="14"
+    >
+      last 14 days
     </option>
     <option
       value="7"

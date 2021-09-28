@@ -93,6 +93,7 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
       <select value={dateOption} onChange={handleChange}>
         <option value="99999">all time</option>
         <option value="30">last 30 days</option>
+        <option value="14">last 14 days</option>
         <option value="7">last 7 days</option>
       </select>
     </Section>
