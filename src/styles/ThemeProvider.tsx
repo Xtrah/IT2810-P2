@@ -1,7 +1,7 @@
 import React, { useState, ReactNode, SetStateAction, Dispatch } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import ThemeTypes from "../../types/themeTypes";
-import { lightTheme, darkTheme } from "../../styles/ThemeStyles";
+import ThemeTypes from "../types/themeTypes";
+import { lightTheme, darkTheme } from "./ThemeStyles";
 
 export interface IThemeContext {
   theme: string;
@@ -16,7 +16,6 @@ interface ThemeProviderProps {
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState(ThemeTypes.LIGHT);
-
   return (
     <ThemeContext.Provider value={{ setTheme, theme }}>
       <StyledThemeProvider

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../components/Theme/ThemeProvider";
+import { ThemeContext } from "../styles/ThemeProvider";
 import { darkTheme, lightTheme } from "../styles/ThemeStyles";
 import { Commit } from "../types/gitlabDataTypes";
 import { Series } from "../types/highchartsTypes";
