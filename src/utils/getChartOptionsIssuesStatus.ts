@@ -1,35 +1,85 @@
+import { useContext } from "react";
+import { ThemeContext } from "../components/Theme/ThemeProvider";
+import { darkTheme, lightTheme } from "../components/Theme/ThemeStyles";
 import { Issue } from "../types/gitlabDataTypes";
+import ThemeTypes from "./themeTypes";
 
-const getChartOptionsIssuesStatus = (issuesData: Issue[]) => ({
-  chart: {
-    type: "column",
-  },
-  title: {
-    text: "Issue status",
-  },
-  xAxis: {
-    categories: ["Issue status"],
-  },
-  yAxis: {
+const getChartOptionsIssuesStatus = (issuesData: Issue[]) => {
+  const { theme } = useContext(ThemeContext);
+  const ThemeStyles = theme === ThemeTypes.LIGHT ? lightTheme : darkTheme;
+
+  const chart = {
+    chart: {
+      type: "column",
+      backgroundColor: ThemeStyles.card,
+      color: ThemeStyles.text,
+    },
     title: {
-      text: "Issues",
+      text: "Issue status",
+      style: {
+        color: ThemeStyles.text,
+        fontFamily: ThemeStyles.font,
+      },
     },
-  },
-  colors: ["orange"],
-  series: [
-    {
-      name: "Open",
-      data: [
-        issuesData.filter((issue: Issue) => issue.closed_at === null).length,
-      ],
+    xAxis: {
+      labels: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
+      },
+      categories: ["Issue status"],
     },
-    {
-      name: "Closed",
-      data: [
-        issuesData.filter((issue: Issue) => issue.closed_at !== null).length,
-      ],
+    yAxis: {
+      labels: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
+      },
+      title: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
+        text: "Issues",
+      },
     },
-  ],
-});
+    legend: {
+      itemStyle: {
+        color: ThemeStyles.text,
+        fontFamily: ThemeStyles.font,
+      },
+    },
+    colors: [ThemeStyles.primary, ThemeStyles.primaryDark],
+    series: [
+      {
+        name: "Open",
+        data: [
+          issuesData.filter((issue: Issue) => issue.closed_at === null).length,
+        ],
+      },
+      {
+        name: "Closed",
+        data: [
+          issuesData.filter((issue: Issue) => issue.closed_at !== null).length,
+        ],
+      },
+    ],
+    plotOptions: {
+      series: {
+        borderWidth: 0,
+        shadow: {
+          color: "rgba(0,0,0,1)",
+          offsetX: 0,
+          offsetY: 0,
+          opacity: 0.05,
+          width: 5,
+        },
+      },
+    },
+  };
+  return chart;
+};
 
 export default getChartOptionsIssuesStatus;

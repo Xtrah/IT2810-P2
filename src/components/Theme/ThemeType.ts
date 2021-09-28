@@ -7,4 +7,5 @@ export interface ThemeType {
   toggleBorder: string;
   gradient: string;
   shadow: string;
+  font: string;
 }

@@ -9,6 +9,7 @@ export const lightTheme: ThemeType = {
   toggleBorder: "#FFF",
   gradient: "linear-gradient(#39598A, #79D7ED)",
   shadow: "0 0 4px rgba(0,0,0,0.25)",
+  font: "BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
 };
 
 export const darkTheme: ThemeType = {
@@ -20,4 +21,5 @@ export const darkTheme: ThemeType = {
   toggleBorder: "#6B8096",
   gradient: "linear-gradient(#091236, #1E215D)",
   shadow: "0 0 4px rgba(0,0,0,0.25)",
+  font: "BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
 };
