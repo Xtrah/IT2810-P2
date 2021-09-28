@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../styles/ThemeProvider";
+import { darkTheme, lightTheme } from "../styles/ThemeStyles";
 import { Commit } from "../types/gitlabDataTypes";
 import { Series } from "../types/highchartsTypes";
 import getUniqueCommitContributors from "./getUniqueCommitContributors";
+import ThemeTypes from "../types/themeTypes";
 
 const countCommitsPerName = (commitsData: Commit[]): Series => {
   // Per unique name, count contribution.
@@ -18,23 +22,66 @@ const countCommitsPerName = (commitsData: Commit[]): Series => {
 };
 
 const getChartOptionsCommitsPerUser = (commitsData: Commit[]) => {
+  const { theme } = useContext(ThemeContext);
+  const ThemeStyles = theme === ThemeTypes.LIGHT ? lightTheme : darkTheme;
+
   const chartOptionsCommitsPerUser = {
     chart: {
       type: "column",
+      backgroundColor: ThemeStyles.card,
+      color: ThemeStyles.text,
     },
     title: {
       text: "Commits",
+      style: {
+        color: ThemeStyles.text,
+        fontFamily: ThemeStyles.font,
+      },
     },
     xAxis: {
       categories: ["Users"],
+      labels: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
+      },
     },
     yAxis: {
+      labels: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
+      },
       title: {
+        style: {
+          color: ThemeStyles.text,
+          fontFamily: ThemeStyles.font,
+        },
         text: "Commits",
       },
     },
-    colors: ["orange"],
+    legend: {
+      itemStyle: {
+        color: ThemeStyles.text,
+        fontFamily: ThemeStyles.font,
+      },
+    },
+    colors: [ThemeStyles.primary],
     series: countCommitsPerName(commitsData),
+    plotOptions: {
+      series: {
+        borderWidth: 0,
+        shadow: {
+          color: "rgba(0,0,0,1)",
+          offsetX: 0,
+          offsetY: 0,
+          opacity: 0.05,
+          width: 5,
+        },
+      },
+    },
   };
 
   return chartOptionsCommitsPerUser;
