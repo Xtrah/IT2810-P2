@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ThemeToggle from "./Theme/ThemeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -15,9 +15,9 @@ const NavContentWrapper = styled.span`
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  width: 60%;
-  @media (max-width: 1100px) {
-    width: 100%;
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 890px;
   }
 `;
 

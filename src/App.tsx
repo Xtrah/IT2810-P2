@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeProvider } from "./components/Theme/ThemeProvider";
+import { ThemeProvider } from "./styles/ThemeProvider";
 import GlobalStyles from "./styles/global";
 import Navbar from "./components/Navbar";
 import Statistics from "./Statistics";
@@ -7,6 +7,7 @@ import Statistics from "./Statistics";
 const StatisticsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0% 5% 0% 5%;
 `;
 
 function App() {
