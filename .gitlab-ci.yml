@@ -2,6 +2,7 @@ image: node:latest
 
 stages:
   - lint
+  - test
 
 eslint:
   stage: lint
@@ -26,3 +27,9 @@ prettier:
     - npm install -g prettier
     # run prettier checks
     - prettier -c src/*.tsx
+
+test:
+  stage: test
+  script:
+    - npm install
+    - npm run test
