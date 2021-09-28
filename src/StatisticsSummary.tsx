@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { PersonCircle } from "@styled-icons/bootstrap/PersonCircle";
 import { CheckCircle } from "@styled-icons/bootstrap/CheckCircle";
 import { ExclamationCircle } from "@styled-icons/bootstrap/ExclamationCircle";
+import { ChangeEvent, useState } from "react";
 import Section from "./components/Section";
 import { Commit, Issue } from "./types/gitlabDataTypes";
 import getUniqueCommitContributors from "./utils/getUniqueCommitContributors";
@@ -44,9 +45,19 @@ const ColoredSpan = styled.span`
 interface Props {
   issuesData: Issue[];
   commitsData: Commit[];
+  // eslint-disable-next-line no-unused-vars
+  onChange: (dateOption: number) => void;
 }
 
-function StatisticsSummary({ issuesData, commitsData }: Props) {
+function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
+  const [dateOption, setDateOption] = useState("99999");
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newVal = e.target.value;
+    setDateOption(newVal);
+    onChange(parseInt(newVal, 10));
+  };
+
   return (
     <Section>
       <SummaryTitle>Current status of repository</SummaryTitle>
@@ -73,6 +84,13 @@ function StatisticsSummary({ issuesData, commitsData }: Props) {
           </DataParagraph>
         </li>
       </SummaryList>
+
+      <p>Data from </p>
+      <select value={dateOption} onChange={handleChange}>
+        <option value="99999">all time</option>
+        <option value="30">last 30 days</option>
+        <option value="7">last 7 days</option>
+      </select>
     </Section>
   );
 }
