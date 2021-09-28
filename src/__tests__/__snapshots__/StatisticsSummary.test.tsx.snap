@@ -2,25 +2,25 @@
 
 exports[`should render summary with 0 total commits, contributors and issues when empty lists of data 1`] = `
 <section
-  className="sc-bdfBQB gxCNx"
+  className="sc-bdfBQB goIpOt"
 >
   <h1
-    className="sc-dlfnuX gaqnRL"
+    className="sc-dlfnuX ivCGQX"
   >
     Current status of repository
   </h1>
   <ul
-    className="sc-hKgJUU gHxqtX"
+    className="sc-hKgJUU ckoNhy"
   >
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn khebxX"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -31,10 +31,10 @@ exports[`should render summary with 0 total commits, contributors and issues whe
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           0
         </span>
@@ -44,12 +44,12 @@ exports[`should render summary with 0 total commits, contributors and issues whe
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR dmNyHJ"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR LucOW"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -60,10 +60,10 @@ exports[`should render summary with 0 total commits, contributors and issues whe
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           0
         </span>
@@ -73,12 +73,12 @@ exports[`should render summary with 0 total commits, contributors and issues whe
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq iZrIDh"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -90,10 +90,10 @@ exports[`should render summary with 0 total commits, contributors and issues whe
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           0
         </span>
@@ -136,25 +136,25 @@ exports[`should render summary with 0 total commits, contributors and issues whe
 
 exports[`should render summary with correct count when lists of data 1`] = `
 <section
-  className="sc-bdfBQB gxCNx"
+  className="sc-bdfBQB goIpOt"
 >
   <h1
-    className="sc-dlfnuX gaqnRL"
+    className="sc-dlfnuX ivCGQX"
   >
     Current status of repository
   </h1>
   <ul
-    className="sc-hKgJUU gHxqtX"
+    className="sc-hKgJUU ckoNhy"
   >
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn khebxX"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -165,10 +165,10 @@ exports[`should render summary with correct count when lists of data 1`] = `
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           3
         </span>
@@ -178,12 +178,12 @@ exports[`should render summary with correct count when lists of data 1`] = `
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR dmNyHJ"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR LucOW"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -194,10 +194,10 @@ exports[`should render summary with correct count when lists of data 1`] = `
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           4
         </span>
@@ -207,12 +207,12 @@ exports[`should render summary with correct count when lists of data 1`] = `
     <li>
       <svg
         aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq iZrIDh"
-        fill="orange"
+        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
+        fill="currentColor"
         focusable="false"
-        height={24}
+        height={34}
         viewBox="0 0 16 16"
-        width={24}
+        width={34}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -224,10 +224,10 @@ exports[`should render summary with correct count when lists of data 1`] = `
         />
       </svg>
       <p
-        className="sc-gsTEea ifIOGs"
+        className="sc-gsTEea hdYJyo"
       >
         <span
-          className="sc-iBPTik bseNQc"
+          className="sc-iBPTik hakRGd"
         >
           3
         </span>
