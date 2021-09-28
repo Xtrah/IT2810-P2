@@ -5,6 +5,7 @@ import getGitlabData from "./utils/getGitlabData";
 import { Commit, Issue } from "./types/gitlabDataTypes";
 import StatisticsSummary from "./StatisticsSummary";
 import filterDataOnDate from "./utils/filterDataOnDate";
+import useSessionStorage from "./utils/useSessionStorage";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -22,17 +23,26 @@ function Statistics() {
   const [commitsData, setCommitsData] = useState<Commit[]>([]);
   const [filteredCommitsData, setFilteredCommitsData] = useState<Commit[]>([]);
   const [filteredIssuesData, setFilteredIssuesData] = useState<Issue[]>([]);
+  const initialDaysToInclude = "99999";
+  const [daysToIncludeData] = useSessionStorage(
+    "daysToInclude",
+    initialDaysToInclude
+  );
 
   useEffect(() => {
     const fetchAndSetData = async () => {
-      const issues = await getGitlabData("/issues");
-      const commits = await getGitlabData("/repository/commits");
+      const issues: Issue[] = await getGitlabData("/issues");
+      const commits: Commit[] = await getGitlabData("/repository/commits");
       // Set all fetched data
       setIssuesData(issues);
       setCommitsData(commits);
       // Set the data which is displayed
-      setFilteredIssuesData(issues);
-      setFilteredCommitsData(commits);
+      setFilteredCommitsData(
+        filterDataOnDate(commits, parseInt(daysToIncludeData, 10))
+      );
+      setFilteredIssuesData(
+        filterDataOnDate(issues, parseInt(daysToIncludeData, 10))
+      );
     };
 
     fetchAndSetData();

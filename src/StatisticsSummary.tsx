@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { PersonCircle } from "@styled-icons/bootstrap/PersonCircle";
 import { CheckCircle } from "@styled-icons/bootstrap/CheckCircle";
 import { ExclamationCircle } from "@styled-icons/bootstrap/ExclamationCircle";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 import Section from "./components/Section";
 import { Commit, Issue } from "./types/gitlabDataTypes";
 import getUniqueCommitContributors from "./utils/getUniqueCommitContributors";
+import useSessionStorage from "./utils/useSessionStorage";
 
 const DataParagraph = styled.p`
   display: inline;
@@ -62,12 +63,16 @@ interface Props {
 }
 
 function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
-  const [dateOption, setDateOption] = useState("99999");
+  const initialDaysToInclude = "99999";
+  const [daysToIncludeData, setDaysToIncludeData] = useSessionStorage(
+    "daysToInclude",
+    initialDaysToInclude
+  );
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const newVal = e.target.value;
-    setDateOption(newVal);
     onChange(parseInt(newVal, 10));
+    setDaysToIncludeData(newVal);
   };
 
   return (
@@ -98,7 +103,7 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
       </SummaryList>
 
       <Text>Data from </Text>
-      <select value={dateOption} onChange={handleChange}>
+      <select value={daysToIncludeData} onChange={handleChange}>
         <option value="99999">all time</option>
         <option value="30">last 30 days</option>
         <option value="14">last 14 days</option>
