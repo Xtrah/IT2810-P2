@@ -101,6 +101,31 @@ exports[`should render summary with 0 total commits, contributors and issues whe
       </p>
     </li>
   </ul>
+  <p
+    className="sc-fubCzh fqkfqU"
+  >
+    Data from 
+  </p>
+  <select
+    onChange={[Function]}
+    value="99999"
+  >
+    <option
+      value="99999"
+    >
+      all time
+    </option>
+    <option
+      value="30"
+    >
+      last 30 days
+    </option>
+    <option
+      value="7"
+    >
+      last 7 days
+    </option>
+  </select>
 </section>
 `;
 
@@ -205,5 +230,30 @@ exports[`should render summary with correct count when lists of data 1`] = `
       </p>
     </li>
   </ul>
+  <p
+    className="sc-fubCzh fqkfqU"
+  >
+    Data from 
+  </p>
+  <select
+    onChange={[Function]}
+    value="99999"
+  >
+    <option
+      value="99999"
+    >
+      all time
+    </option>
+    <option
+      value="30"
+    >
+      last 30 days
+    </option>
+    <option
+      value="7"
+    >
+      last 7 days
+    </option>
+  </select>
 </section>
 `;

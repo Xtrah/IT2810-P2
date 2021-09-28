@@ -42,6 +42,10 @@ const ColoredSpan = styled.span`
   margin: 0.25em;
 `;
 
+const Text = styled.p`
+  margin-bottom: 4px;
+`;
+
 interface Props {
   issuesData: Issue[];
   commitsData: Commit[];
@@ -85,7 +89,7 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
         </li>
       </SummaryList>
 
-      <p>Data from </p>
+      <Text>Data from </Text>
       <select value={dateOption} onChange={handleChange}>
         <option value="99999">all time</option>
         <option value="30">last 30 days</option>
