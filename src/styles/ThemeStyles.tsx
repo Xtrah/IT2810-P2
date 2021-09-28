@@ -1,4 +1,4 @@
-import { ThemeType } from "./ThemeType";
+import { ThemeType } from "../types/ThemeType";
 
 export const lightTheme: ThemeType = {
   primary: "#F17A0C",

@@ -3,7 +3,7 @@ import { SunFill } from "@styled-icons/bootstrap/SunFill";
 import { MoonFill } from "@styled-icons/bootstrap/MoonFill";
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeProvider";
-import ThemeTypes from "../../utils/themeTypes";
+import ThemeTypes from "../../types/themeTypes";
 
 const StyledButton = styled.button`
   border: none;
@@ -38,7 +38,11 @@ const ThemeToggle = () => {
       aria-label="Toggle color-mode"
       type="button"
     >
-      {theme === ThemeTypes.LIGHT ? <SunFill size={28} /> : <MoonFill size={28} />}
+      {theme === ThemeTypes.LIGHT ? (
+        <SunFill size={28} />
+      ) : (
+        <MoonFill size={28} />
+      )}
     </StyledButton>
   );
 };
