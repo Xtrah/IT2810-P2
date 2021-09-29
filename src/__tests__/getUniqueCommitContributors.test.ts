@@ -1,12 +1,12 @@
 import getUniqueCommitContributors from "../utils/getUniqueCommitContributors";
 
-describe("Unique contributors", () => {
+describe("getUniqueCommitContributors", () => {
   test("it should return unique names from a data list", () => {
     const input = [
-      { author_name: "user1" },
-      { author_name: "user1" },
-      { author_name: "user2" },
-      { author_name: "user3" },
+      { author_name: "user1", created_at: "" },
+      { author_name: "user1", created_at: "" },
+      { author_name: "user2", created_at: "" },
+      { author_name: "user3", created_at: "" },
     ];
 
     const output = ["user1", "user2", "user3"];
