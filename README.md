@@ -51,7 +51,7 @@ We divided each requirement for the project into issues, either as functional us
 
 #### HTML Web Storage
 
-Use of local storage and session storage
+We used local storage to save the users theme-preference. This results in the theme persisting between each visit. Themeing is a personal preference which many users feel strongly about. Thus they can find it immensely annoying if such a setting does not persist. The implementation is in the form of a custom hook based on [this snippet](https://usehooks.com/useLocalStorage/). A custom hook provides for better readability and a greater level of reusability if we were to introduce more variables to save in local storage.
 
 #### Presenting GitLab data parameterized
 
