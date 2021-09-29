@@ -3,7 +3,7 @@ import { SunFill } from "@styled-icons/bootstrap/SunFill";
 import { MoonFill } from "@styled-icons/bootstrap/MoonFill";
 import { useContext } from "react";
 import { ThemeContext } from "../styles/ThemeProvider";
-import ThemeTypes from "../types/themeTypes";
+import { ThemeTypes } from "../types/themeTypes";
 
 const StyledButton = styled.button`
   border: none;

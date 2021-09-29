@@ -1,6 +1,6 @@
-import { ThemeType } from "../types/ThemeType";
+import { Theme } from "../types/themeTypes";
 
-export const lightTheme: ThemeType = {
+export const lightTheme: Theme = {
   primary: "#F17A0C",
   primaryDark: "#a05107",
   body: "#EFEFEF",
@@ -12,7 +12,7 @@ export const lightTheme: ThemeType = {
   font: "BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
 };
 
-export const darkTheme: ThemeType = {
+export const darkTheme: Theme = {
   primary: "#F17A0C",
   primaryDark: "#a05107",
   body: "#130900",

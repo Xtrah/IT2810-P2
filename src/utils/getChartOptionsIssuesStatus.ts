@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../styles/ThemeProvider";
 import { darkTheme, lightTheme } from "../styles/ThemeStyles";
 import { Issue } from "../types/gitlabDataTypes";
-import ThemeTypes from "../types/themeTypes";
+import { ThemeTypes } from "../types/themeTypes";
 
 const getChartOptionsIssuesStatus = (issuesData: Issue[]) => {
   const { theme } = useContext(ThemeContext);
