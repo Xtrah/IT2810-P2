@@ -12,7 +12,7 @@ const FlexContainer = styled.div`
   width: 100%;
   justify-content: center;
 
-  @media (min-width: 1060px) {
+  @media (min-width: 850px) {
     flex-direction: row;
   }
 `;

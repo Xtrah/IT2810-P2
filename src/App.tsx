@@ -10,7 +10,12 @@ import { Commit, Issue } from "./types/gitlabDataTypes";
 const StatisticsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0% 5% 0% 5%;
+  padding: 0px 20px 0px 20px;
+  width: 100%;
+  margin: auto;
+  @media (min-width: 960px) {
+    width: 960px;
+  }
 `;
 
 interface State {
