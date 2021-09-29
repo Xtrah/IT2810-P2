@@ -35,7 +35,9 @@ const ThemeToggle = () => {
   return (
     <StyledButton
       onClick={toggleTheme}
-      aria-label="Toggle color-mode"
+      aria-label={
+        theme === ThemeTypes.LIGHT ? "Turn on dark mode" : "Turn on light mode"
+      }
       type="button"
     >
       {theme === ThemeTypes.LIGHT ? (

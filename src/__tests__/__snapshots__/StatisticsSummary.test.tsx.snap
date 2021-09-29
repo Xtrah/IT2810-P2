@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render summary with 0 total commits, contributors and issues when empty lists of data 1`] = `
+exports[`<StatisticsSummary /> should render summary with 0 total commits, contributors and issues when empty lists of data 1`] = `
 <section
   className="sc-bdfBQB goIpOt"
 >
@@ -134,7 +134,7 @@ exports[`should render summary with 0 total commits, contributors and issues whe
 </section>
 `;
 
-exports[`should render summary with correct count when lists of data 1`] = `
+exports[`<StatisticsSummary /> should render summary with correct count when lists of data 1`] = `
 <section
   className="sc-bdfBQB goIpOt"
 >
