@@ -4,20 +4,40 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## 👩‍💻 Setup and development
 
-The environment variables need to be set before running the project for correct data fetching. After the variables are set, the relevant commands are:
+**NB! The environment variables need to be set before running the project for correct data fetching.**
+
+### Setting environment variables
+
+1. Make a file named `.env` in the projects root directory
+2. Paste the following text into the `.env`-file:
+
+   ```text
+   REACT_APP_GITLAB_PROJECT_ACCESS_TOKEN=#AccesTokenFromGitlab
+   REACT_APP_GITLAB_PROJECT_ID=#ProjectIdFromGitlab
+   ```
+
+3. **Get Gitlab access token:**
+
+   - Go into your project in GitLab
+   - Go to "Settings" -> "Access Tokens"
+   - Choose a name, expiry-date and scopes
+   - Click "Create project access token"
+   - Substitute the received access token with `#AccesTokenFromGitlab` in the `.env`-file
+
+4. **Get Gitlab project ID:**
+   - Go to the "Project overview" page
+   - The project ID can be copied from under the title of the project.
+   - Substitute `#ProjectIdFromGitlab` with the retrieved project ID in the `.env`-file
+
+### Running the project
+
+After the variables are set, the relevant commands are:
 
 - `npm install` to install dependencies
 - `npm start` to run app in development mode
 - `npm run lint` to run prettier and eslint checks
 - `npm test` to run [test runner](https://facebook.github.io/create-react-app/docs/running-tests) interactively
 - `npm build` to minify and build for production to the `build` folder
-
-### Setting environment variables
-
-- make a `.env` file on root
-- put the correct keys according to `.env.example` file
-- **Getting Gitlab access token:** Go into your project in gitlab. Make a token on the page "Access tokens" under "Settings".
-- **Getting Gitlab project ID:** On "Project overview" page, project ID can be copied from under the title of the project.
 
 ## 📋 Requirements
 
