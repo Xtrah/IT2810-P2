@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { ThemeType } from "../types/ThemeType";
+import { Theme } from "../types/themeTypes";
 
-const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
+const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
 *,
 *::after,

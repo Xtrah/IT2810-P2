@@ -1,11 +1,14 @@
-import React, { useState, ReactNode, SetStateAction, Dispatch } from "react";
+import React, { ReactNode } from "react";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import ThemeTypes from "../types/themeTypes";
+import { ThemeTypes } from "../types/themeTypes";
+import useLocalStorage from "../utils/useLocalStorage";
 import { lightTheme, darkTheme } from "./ThemeStyles";
 
 export interface IThemeContext {
   theme: string;
-  setTheme: Dispatch<SetStateAction<ThemeTypes>>;
+  // Eslint throwing errors because of unused interface parameter is a bug
+  // eslint-disable-next-line no-unused-vars
+  setTheme(themeValue: ThemeTypes): void;
 }
 
 const ThemeContext = React.createContext({} as IThemeContext);
@@ -15,7 +18,11 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState(ThemeTypes.LIGHT);
+  const [theme, setTheme] = useLocalStorage<ThemeTypes>(
+    "themeMode",
+    ThemeTypes.LIGHT
+  );
+
   return (
     <ThemeContext.Provider value={{ setTheme, theme }}>
       <StyledThemeProvider

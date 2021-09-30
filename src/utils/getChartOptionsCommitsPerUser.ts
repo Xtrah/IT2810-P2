@@ -4,7 +4,7 @@ import { darkTheme, lightTheme } from "../styles/ThemeStyles";
 import { Commit } from "../types/gitlabDataTypes";
 import { Series } from "../types/highchartsTypes";
 import getUniqueCommitContributors from "./getUniqueCommitContributors";
-import ThemeTypes from "../types/themeTypes";
+import { ThemeTypes } from "../types/themeTypes";
 
 const countCommitsPerName = (commitsData: Commit[]): Series => {
   // Per unique name, count contribution.
