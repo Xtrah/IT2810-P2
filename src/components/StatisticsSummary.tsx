@@ -8,14 +8,6 @@ import { Commit, Issue } from "../types/gitlabDataTypes";
 import getUniqueCommitContributors from "../utils/getUniqueCommitContributors";
 import useSessionStorage from "../utils/useSessionStorage";
 
-const SummaryWrapper = styled.div`
-  display: flex;
-  flex-shrink: 1;
-
-  @media (min-width: 1024px) {
-  }
-`;
-
 const DataParagraph = styled.p`
   display: inline;
   font-size: 18px;
@@ -84,42 +76,40 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
   };
 
   return (
-    <SummaryWrapper>
-      <Section>
-        <SummaryTitle>Current status of repository</SummaryTitle>
-        <SummaryList>
-          <li>
-            <ExclamationIcon size={34} />
-            <DataParagraph>
-              <KeyNumber>{issuesData.length}</KeyNumber>Total issues
-            </DataParagraph>
-          </li>
-          <li>
-            <CheckIcon size={34} />
-            <DataParagraph>
-              <KeyNumber>{commitsData.length}</KeyNumber>Total commits
-            </DataParagraph>
-          </li>
-          <li>
-            <UserIcon size={34} />
-            <DataParagraph>
-              <KeyNumber>
-                {getUniqueCommitContributors(commitsData).length}
-              </KeyNumber>
-              Total contributors
-            </DataParagraph>
-          </li>
-        </SummaryList>
+    <Section>
+      <SummaryTitle>Current status of repository</SummaryTitle>
+      <SummaryList>
+        <li>
+          <ExclamationIcon size={34} />
+          <DataParagraph>
+            <KeyNumber>{issuesData.length}</KeyNumber>Total issues
+          </DataParagraph>
+        </li>
+        <li>
+          <CheckIcon size={34} />
+          <DataParagraph>
+            <KeyNumber>{commitsData.length}</KeyNumber>Total commits
+          </DataParagraph>
+        </li>
+        <li>
+          <UserIcon size={34} />
+          <DataParagraph>
+            <KeyNumber>
+              {getUniqueCommitContributors(commitsData).length}
+            </KeyNumber>
+            Total contributors
+          </DataParagraph>
+        </li>
+      </SummaryList>
 
-        <Text>Data from </Text>
-        <select value={daysToIncludeData} onChange={handleChange}>
-          <option value="99999">all time</option>
-          <option value="30">last 30 days</option>
-          <option value="14">last 14 days</option>
-          <option value="7">last 7 days</option>
-        </select>
-      </Section>
-    </SummaryWrapper>
+      <Text>Data from </Text>
+      <select value={daysToIncludeData} onChange={handleChange}>
+        <option value="99999">all time</option>
+        <option value="30">last 30 days</option>
+        <option value="14">last 14 days</option>
+        <option value="7">last 7 days</option>
+      </select>
+    </Section>
   );
 }
 
