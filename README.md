@@ -12,17 +12,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Paste the following text into the `.env`-file:
 
    ```text
-   REACT_APP_GITLAB_PROJECT_ACCESS_TOKEN=#AccesTokenFromGitlab
+   REACT_APP_GITLAB_PROJECT_ACCESS_TOKEN=#AccessTokenFromGitlab
    REACT_APP_GITLAB_PROJECT_ID=#ProjectIdFromGitlab
    ```
 
 3. **Get Gitlab access token:**
 
    - Go into your project in GitLab
-   - Go to "Settings" -> "Access Tokens"
+   - Go to "Settings" --> "Access Tokens"
    - Choose a name, expiry-date and scopes
    - Click "Create project access token"
-   - Substitute the received access token with `#AccesTokenFromGitlab` in the `.env`-file
+   - Substitute the received access token with `#AccessTokenFromGitlab` in the `.env`-file
 
 4. **Get Gitlab project ID:**
    - Go to the "Project overview" page
@@ -80,9 +80,9 @@ We chose to use the built in function `fetch` for data fetching. We considered t
 
 ### Using Jest
 
-For snapshot test react-test-renderer was used. This makes a json-version of a component, letting you check if earlier representation matches the new representation of the component. We added snapshot tests checking if `StatisticsSummary` rendered as expected with or without data.
+Jest is a testing framework which is used for unit tests. We made use of its built in functions to test whether a utility function `getUniqueCommitContributors` gave expected output. Jest can also be expanded upon with other libraries. We made use of `react-test-renderer`, which allowed us to make snapshot tests. This makes a json-version of a component, letting you check if earlier representation matches the new representation of the component. We added snapshot tests checking if `StatisticsSummary` rendered as expected with or without data.
 
-For Jest tests we tested whether a utility function `getUniqueCommitContributors` gave expected output. We also made use of the pre-installed testing library from react to test whether `App` rendered without crashing.
+An easy, useful test is checking whether the app crashes. To do this, we used the render function from `@testing-library/react` to test `App`. We also wanted to test user interaction, specifically if toggle of theme worked. Here we used `@testing-library/user-event` to check if button click changed theme as expected.
 
 ### Testing UI and responsiveness
 
