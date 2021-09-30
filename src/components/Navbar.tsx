@@ -16,8 +16,9 @@ const NavContentWrapper = styled.span`
   justify-content: space-between;
   padding: 20px;
   width: 85%;
-  @media (min-width: 960px) {
-    width: 890px;
+  margin: 0px 50px 0px 50px;
+  @media (min-width: 850px) {
+    width: 850px;
   }
 `;
 

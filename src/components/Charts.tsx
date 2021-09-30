@@ -8,9 +8,6 @@ import Section from "./Section";
 
 const ChartsWrapper = styled.div`
   flex-grow: 1;
-
-  @media (min-width: 1024px) {
-  }
 `;
 
 interface Props {
