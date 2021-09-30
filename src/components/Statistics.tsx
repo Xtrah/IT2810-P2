@@ -11,9 +11,11 @@ const FlexContainer = styled.div`
   flex-direction: column;
   width: 100%;
   justify-content: center;
-
-  @media (min-width: 850px) {
+  padding: 0px 20px 0px 20px;
+  margin: auto;
+  @media (min-width: 960px) {
     flex-direction: row;
+    width: 960px;
   }
 `;
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+
 import React from "react";
 import { ThemeProvider } from "./styles/ThemeProvider";
 import GlobalStyles from "./styles/global";
@@ -7,16 +7,6 @@ import getGitlabData from "./utils/getGitlabData";
 import Statistics from "./components/Statistics";
 import { Commit, Issue } from "./types/gitlabDataTypes";
 
-const StatisticsWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 0px 20px 0px 20px;
-  width: 100%;
-  margin: auto;
-  @media (min-width: 960px) {
-    width: 960px;
-  }
-`;
 
 interface State {
   issuesData: Issue[];
@@ -49,9 +39,7 @@ class App extends React.Component<null, State> {
       <ThemeProvider>
         <GlobalStyles />
         <Navbar />
-        <StatisticsWrapper>
-          <Statistics issuesData={issuesData} commitsData={commitsData} />
-        </StatisticsWrapper>
+        <Statistics issuesData={issuesData} commitsData={commitsData} />
       </ThemeProvider>
     );
   }
