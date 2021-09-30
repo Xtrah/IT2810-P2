@@ -77,9 +77,11 @@ The user is given the option to change the time scope of the GitLab data. This c
 
 The project uses the latest versions of [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) at the time of development.
 
-How we use class components and functional components, structured appropriately.
+Traditionally class components were used to handle state with option to define lifecycle methods, while functional components (FC) were used for presentation. This distinction does not stand with the arrival of hooks for state management and life cycle methods. In large we used FC, as it includes less boilerplate code, it avoids the confusing this-term and in sum can be more readable.
 
-How we use props, state mechanisms, Context API.
+We used a class component in `App`. It acts as a parent component, fetching data in the lifecycle method `componentDidMount`. In a FC `useEffect` can be used to control the traditional life cycle methods. For example in `Statistics` we used `useEffect` to listen for changes in the data sent from `App`, which corresponds with CC's `componentDidUpdate`.
+
+Since this was not a large app, we didn't feel the need to create a global store for the data fetching. Instead we drilled down the data from `App` and down the components using props. It was useful to utilize the context API for the theme toogling, as this affected all the styles.
 
 External libraries/components used are:
 
