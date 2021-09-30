@@ -7,7 +7,7 @@ exports[`<StatisticsSummary /> should render summary with 0 total commits, contr
   <h1
     className="sc-dlfnuX ivCGQX"
   >
-    Current status of repository
+    Status of repository
   </h1>
   <ul
     className="sc-hKgJUU ckoNhy"
@@ -141,7 +141,7 @@ exports[`<StatisticsSummary /> should render summary with correct count when lis
   <h1
     className="sc-dlfnuX ivCGQX"
   >
-    Current status of repository
+    Status of repository
   </h1>
   <ul
     className="sc-hKgJUU ckoNhy"
