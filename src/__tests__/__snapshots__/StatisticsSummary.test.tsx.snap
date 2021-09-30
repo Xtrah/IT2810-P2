@@ -1,269 +1,277 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<StatisticsSummary /> should render summary with 0 total commits, contributors and issues when empty lists of data 1`] = `
-<section
-  className="sc-bdfBQB goIpOt"
+<div
+  className="sc-gsTEea dbSdSQ"
 >
-  <h1
-    className="sc-dlfnuX ivCGQX"
+  <section
+    className="sc-bdfBQB goIpOt"
   >
-    Current status of repository
-  </h1>
-  <ul
-    className="sc-hKgJUU ckoNhy"
-  >
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-        />
-        <path
-          d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+    <h1
+      className="sc-hKgJUU iaKowc"
+    >
+      Current status of repository
+    </h1>
+    <ul
+      className="sc-eCstlR hbQdQn"
+    >
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-iBPTik gSenCc"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          0
-        </span>
-        Total issues
-      </p>
-    </li>
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR LucOW"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-        />
-        <path
-          d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
         >
-          0
-        </span>
-        Total commits
-      </p>
-    </li>
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
-        />
-        <path
-          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-          fillRule="evenodd"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            0
+          </span>
+          Total issues
+        </p>
+      </li>
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          0
-        </span>
-        Total contributors
-      </p>
-    </li>
-  </ul>
-  <p
-    className="sc-fubCzh fqkfqU"
-  >
-    Data from 
-  </p>
-  <select
-    onChange={[Function]}
-    value="99999"
-  >
-    <option
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
+        >
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            0
+          </span>
+          Total commits
+        </p>
+      </li>
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+          />
+          <path
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
+        >
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            0
+          </span>
+          Total contributors
+        </p>
+      </li>
+    </ul>
+    <p
+      className="sc-pGacB FejdD"
+    >
+      Data from 
+    </p>
+    <select
+      onChange={[Function]}
       value="99999"
     >
-      all time
-    </option>
-    <option
-      value="30"
-    >
-      last 30 days
-    </option>
-    <option
-      value="14"
-    >
-      last 14 days
-    </option>
-    <option
-      value="7"
-    >
-      last 7 days
-    </option>
-  </select>
-</section>
+      <option
+        value="99999"
+      >
+        all time
+      </option>
+      <option
+        value="30"
+      >
+        last 30 days
+      </option>
+      <option
+        value="14"
+      >
+        last 14 days
+      </option>
+      <option
+        value="7"
+      >
+        last 7 days
+      </option>
+    </select>
+  </section>
+</div>
 `;
 
 exports[`<StatisticsSummary /> should render summary with correct count when lists of data 1`] = `
-<section
-  className="sc-bdfBQB goIpOt"
+<div
+  className="sc-gsTEea dbSdSQ"
 >
-  <h1
-    className="sc-dlfnuX ivCGQX"
+  <section
+    className="sc-bdfBQB goIpOt"
   >
-    Current status of repository
-  </h1>
-  <ul
-    className="sc-hKgJUU ckoNhy"
-  >
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-        />
-        <path
-          d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+    <h1
+      className="sc-hKgJUU iaKowc"
+    >
+      Current status of repository
+    </h1>
+    <ul
+      className="sc-eCstlR hbQdQn"
+    >
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-iBPTik gSenCc"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          3
-        </span>
-        Total issues
-      </p>
-    </li>
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-eCstlR LucOW"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-        />
-        <path
-          d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
         >
-          4
-        </span>
-        Total commits
-      </p>
-    </li>
-    <li>
-      <svg
-        aria-hidden="true"
-        className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
-        fill="currentColor"
-        focusable="false"
-        height={34}
-        viewBox="0 0 16 16"
-        width={34}
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
-        />
-        <path
-          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-          fillRule="evenodd"
-        />
-      </svg>
-      <p
-        className="sc-gsTEea hdYJyo"
-      >
-        <span
-          className="sc-iBPTik hakRGd"
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            3
+          </span>
+          Total issues
+        </p>
+      </li>
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-jSgvzq jXfoLi"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
         >
-          3
-        </span>
-        Total contributors
-      </p>
-    </li>
-  </ul>
-  <p
-    className="sc-fubCzh fqkfqU"
-  >
-    Data from 
-  </p>
-  <select
-    onChange={[Function]}
-    value="99999"
-  >
-    <option
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+          />
+          <path
+            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
+        >
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            4
+          </span>
+          Total commits
+        </p>
+      </li>
+      <li>
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-ea9ulj-0 iuNRof sc-gKseQn iCzHnw"
+          fill="currentColor"
+          focusable="false"
+          height={34}
+          viewBox="0 0 16 16"
+          width={34}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+          />
+          <path
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+            fillRule="evenodd"
+          />
+        </svg>
+        <p
+          className="sc-dlfnuX eHxxok"
+        >
+          <span
+            className="sc-fubCzh rifFc"
+          >
+            3
+          </span>
+          Total contributors
+        </p>
+      </li>
+    </ul>
+    <p
+      className="sc-pGacB FejdD"
+    >
+      Data from 
+    </p>
+    <select
+      onChange={[Function]}
       value="99999"
     >
-      all time
-    </option>
-    <option
-      value="30"
-    >
-      last 30 days
-    </option>
-    <option
-      value="14"
-    >
-      last 14 days
-    </option>
-    <option
-      value="7"
-    >
-      last 7 days
-    </option>
-  </select>
-</section>
+      <option
+        value="99999"
+      >
+        all time
+      </option>
+      <option
+        value="30"
+      >
+        last 30 days
+      </option>
+      <option
+        value="14"
+      >
+        last 14 days
+      </option>
+      <option
+        value="7"
+      >
+        last 7 days
+      </option>
+    </select>
+  </section>
+</div>
 `;
