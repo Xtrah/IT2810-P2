@@ -47,29 +47,55 @@ We divided each requirement for the project into issues, either as functional us
 
 #### Page elements and design
 
+The application consists of several page elements:
+
+- Title bar with theme button
+- Summary of the statistics with a time scope menu
+- Statistics
+
+We used a simple material layout that retrieves data immediately on page load, where you can switch between light and dark mode.
+
 #### Responsive web design
+
+The site is responsive and compatible with most devices, using different techniques described in the [responsive layout](#Responsive_layout) section below.
 
 #### HTML Web Storage
 
 We used local storage to save the users theme-preference. This results in the theme persisting between each visit. Themeing is a personal preference which many users feel strongly about. Thus they can find it immensely annoying if such a setting does not persist. The implementation is in the form of a custom hook based on [this snippet](https://usehooks.com/useLocalStorage/). A custom hook provides for better readability and a greater level of reusability if we were to introduce more variables to save in local storage.
 
+Basing session storage on the same local storage hook, we store the user selected time scope for the GitLab statistics. This setting makes sure that the selected time scope in the dropdown menu stays selected when the user refreshes the page for the duration of the session. This is convinient when the user refreshes the page and expects to retrieve updated statistics for the selected time frame. Without session storage the time scope would reset to the default "all time" every time the page loads.
+
 #### Presenting GitLab data parameterized
+
+The page presents GitLab issue and commit statistics rendered using [Highcharts](https://www.npmjs.com/package/highcharts), an external SVG-based charting library.
+
+The user is given the option to change the time scope of the GitLab data. This change is handled in the browser itself, giving the user instant feedback. This setting is saved in user session storage such that it saves even if the user were to refresh the page.
 
 ### Technical requirements
 
 #### React with TypeScript
 
-React with TypeScript: class components and functional components. Appropriate component structure.
+The project uses the latest versions of [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) at the time of development.
 
-Using props and state mechanisms, and the Context API.
+How we use class components and functional components, structured appropriately.
 
-List used components from external libraries.
+How we use props, state mechanisms, Context API.
+
+External libraries/components used are:
+
+- [Highcharts](https://www.npmjs.com/package/highcharts) to render statistics in charts
+- [styled-components](https://styled-components.com/) for easier customization of React components
+- [Dotenv](https://github.com/motdotla/dotenv) for environment variables/project secrets
+- [Husky](https://typicode.github.io/husky/) for Git hooks
+- [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) for formatting checks and code linting
 
 #### Fetching GitLab data
 
 We chose to use the built in function `fetch` for data fetching. We considered the external library `axios`, which allows for automatic transforming of json-data. On the contrary, with `fetch`, we have to do a two-step-process to first make the request, then call the json-method. This can make the functions cumbersome, adding more boilerplate lessening the readability and developer speed. Since there wouldn't be many fetch-definitions in the project (we only defined one), we found `fetch` to be suitable for our needs. This avoided adding more dependencies to the project.
 
 #### Responsive layout
+
+How we used:
 
 - Viewport
 - Media queries
@@ -86,7 +112,7 @@ An easy, useful test is checking whether the app crashes. To do this, we used th
 
 ### Testing UI and responsiveness
 
-Testing on 3 different units.
+Testing on 3 different devices.
 
 ## ⚗️ Pipeline
 
