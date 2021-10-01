@@ -63,13 +63,15 @@ The site is responsive and compatible with most devices, using different techniq
 
 We used local storage to save the users theme-preference. This results in the theme persisting between each visit. Themeing is a personal preference which many users feel strongly about. Thus they can find it immensely annoying if such a setting does not persist. The implementation is in the form of a custom hook based on [this snippet](https://usehooks.com/useLocalStorage/). A custom hook provides for better readability and a greater level of reusability if we were to introduce more variables to save in local storage.
 
-Basing session storage on the same local storage hook, we store the user selected time scope for the GitLab statistics. This setting makes sure that the selected time scope in the dropdown menu stays selected when the user refreshes the page for the duration of the session. This is convinient when the user refreshes the page and expects to retrieve updated statistics for the selected time frame. Without session storage the time scope would reset to the default "all time" every time the page loads.
+We used session storage for storing the user's selected time scope of GitLab statistics. We implemented this functionality in a custom hook, similar to the one mentioned above, as the functionality was very similar. Storing the setting in session storage made sure that the selected time scope in the dropdown menu stays selected when the user refreshes the page for the duration of the session. This is convenient when the user refreshes the page and expects to retrieve updated statistics for the selected time frame. Without session storage the time scope would reset to the default every time the page loads.
 
 #### Presenting GitLab data parameterized
 
-The page presents GitLab issue and commit statistics rendered using [Highcharts](https://www.npmjs.com/package/highcharts), an external SVG-based charting library.
+The page presents GitLab issue and commit statistics rendered using [Highcharts](https://www.npmjs.com/package/highcharts), an external SVG-based charting library. We chose this as someone in the team had experience with it, it is popular and has good documentation.
 
-The user is given the option to change the time scope of the GitLab data. This change is handled in the browser itself, giving the user instant feedback. This setting is saved in user session storage such that it saves even if the user were to refresh the page.
+For user parameterizing we chose to display data based on a chosen time frame. One solution for this was to fetch specific data on request. We chose not to do this, as it would lead to multiple fetches when changing time scopes and GitLab has a limit on API-calls.
+
+Instead, we do all the data fetching when the app mounts. Then we filter the data on the client side according to what time scope is chosen by the user. As it's not expected that the data will change often, we found this a suitable solution.
 
 ### Technical requirements
 
@@ -77,7 +79,7 @@ The user is given the option to change the time scope of the GitLab data. This c
 
 The project uses the latest versions of [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) at the time of development.
 
-Traditionally class components were used to handle state with option to define lifecycle methods, while functional components (FC) were used for presentation. This distinction does not stand with the arrival of hooks for state management and life cycle methods. In large we used FC, as it includes less boilerplate code, it avoids the confusing this-term and in sum can be more readable.
+[Traditionally](https://www.twilio.com/blog/react-choose-functional-components) class components were used to handle state with option to define lifecycle methods, while functional components (FC) were used for presentation. This distinction does not stand with the arrival of hooks for state management and life cycle methods. In large we used FC, as it includes less boilerplate code, it avoids the confusing this-term and in sum can be more readable.
 
 We used a class component in `App`. It acts as a parent component, fetching data in the lifecycle method `componentDidMount`. In a FC `useEffect` can be used to control the traditional life cycle methods. For example in `Statistics` we used `useEffect` to listen for changes in the data sent from `App`, which corresponds with CC's `componentDidUpdate`.
 
@@ -93,7 +95,7 @@ External libraries/components used are:
 
 #### Fetching GitLab data
 
-We chose to use the built in function `fetch` for data fetching. We considered the external library `axios`, which allows for automatic transforming of json-data. On the contrary, with `fetch`, we have to do a two-step-process to first make the request, then call the json-method. This can make the functions cumbersome, adding more boilerplate lessening the readability and developer speed. Since there wouldn't be many fetch-definitions in the project (we only defined one), we found `fetch` to be suitable for our needs. This avoided adding more dependencies to the project.
+We chose to use the built in function `fetch` for [data fetching](https://www.geeksforgeeks.org/difference-between-fetch-and-axios-js-for-making-http-requests/). We considered the external library `axios`, which allows for automatic transforming of json-data. On the contrary, with `fetch`, we have to do a two-step-process to first make the request, then call the json-method. This can make the functions cumbersome, adding more boilerplate lessening the readability and developer speed. Since there wouldn't be many fetch-definitions in the project (we only defined one), we found `fetch` to be suitable for our needs. This avoided adding more dependencies to the project.
 
 #### Responsive layout
 
@@ -116,6 +118,8 @@ An easy, useful test is checking whether the app crashes. To do this, we used th
 
 Testing on 3 different devices.
 
-## ⚗️ Pipeline
+## ⚗️ Code quality and use of Git
 
-To ensure good code quality we made use of prettier and eslint. These are enforced with husky, but also checked in the CI-pipeline before merge. We also run the test script to make sure functionality is as expected.
+We made use of the formatting tools [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) to ensure a common coding style and good code quality. These were enforced with a pre-commit hook using [Husky](https://typicode.github.io/husky/) and a CI-pipeline on pull request and after merge. We also ran the test script in the pipeline to make sure functionality was as expected. We strived to extract logical groupings into their own components, and adding the components in their own folder `src/components`. Some functions were extracted into a `src/util` folder for reuse or to avoid cumbersome files. We strived to make variable- and function names descriptive, and also added comments for clarity.
+
+We had a early meeting planning which tasks had to be done and decomposed them into manageable user stories. In development we strived following [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), describing commit messages in a common way and linking them to issues.
