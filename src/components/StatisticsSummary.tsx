@@ -77,7 +77,7 @@ function StatisticsSummary({ issuesData, commitsData, onChange }: Props) {
 
   return (
     <Section>
-      <SummaryTitle>Current status of repository</SummaryTitle>
+      <SummaryTitle>Status of repository</SummaryTitle>
       <SummaryList>
         <li>
           <ExclamationIcon size={34} />

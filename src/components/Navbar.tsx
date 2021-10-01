@@ -15,9 +15,10 @@ const NavContentWrapper = styled.span`
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  width: 100%;
-  @media (min-width: 768px) {
-    width: 890px;
+  width: 85%;
+  margin: 0px 50px 0px 50px;
+  @media (min-width: 960px) {
+    width: 850px;
   }
 `;
 
