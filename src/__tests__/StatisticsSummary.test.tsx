@@ -1,5 +1,5 @@
 import renderer from "react-test-renderer";
-import StatisticsSummary from "../StatisticsSummary";
+import StatisticsSummary from "../components/StatisticsSummary";
 import { Commit, Issue } from "../types/gitlabDataTypes";
 
 // Inspired by https://blog.openreplay.com/react-snapshot-testing-with-jest-an-introduction-with-examples

@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import Charts from "./Charts";
-import getGitlabData from "./utils/getGitlabData";
-import { Commit, Issue } from "./types/gitlabDataTypes";
+import { Commit, Issue } from "../types/gitlabDataTypes";
 import StatisticsSummary from "./StatisticsSummary";
-import filterDataOnDate from "./utils/filterDataOnDate";
-import useSessionStorage from "./utils/useSessionStorage";
+import filterDataOnDate from "../utils/filterDataOnDate";
+import useSessionStorage from "../utils/useSessionStorage";
 
 const FlexContainer = styled.div`
   display: flex;
@@ -18,9 +17,12 @@ const FlexContainer = styled.div`
   }
 `;
 
-function Statistics() {
-  const [issuesData, setIssuesData] = useState<Issue[]>([]);
-  const [commitsData, setCommitsData] = useState<Commit[]>([]);
+interface Props {
+  issuesData: Issue[];
+  commitsData: Commit[];
+}
+
+function Statistics({ issuesData, commitsData }: Props) {
   const [filteredCommitsData, setFilteredCommitsData] = useState<Commit[]>([]);
   const [filteredIssuesData, setFilteredIssuesData] = useState<Issue[]>([]);
   const initialDaysToInclude = "99999";
@@ -30,23 +32,14 @@ function Statistics() {
   );
 
   useEffect(() => {
-    const fetchAndSetData = async () => {
-      const issues: Issue[] = await getGitlabData("/issues");
-      const commits: Commit[] = await getGitlabData("/repository/commits");
-      // Set all fetched data
-      setIssuesData(issues);
-      setCommitsData(commits);
-      // Set the data which is displayed
-      setFilteredCommitsData(
-        filterDataOnDate(commits, parseInt(daysToIncludeData, 10))
-      );
-      setFilteredIssuesData(
-        filterDataOnDate(issues, parseInt(daysToIncludeData, 10))
-      );
-    };
-
-    fetchAndSetData();
-  }, []);
+    // Set the data which is displayed
+    setFilteredCommitsData(
+      filterDataOnDate(commitsData, parseInt(daysToIncludeData, 10))
+    );
+    setFilteredIssuesData(
+      filterDataOnDate(issuesData, parseInt(daysToIncludeData, 10))
+    );
+  }, [issuesData, commitsData]);
 
   const handleDateChange = (daysToIncludeDataFrom: number) => {
     setFilteredCommitsData(

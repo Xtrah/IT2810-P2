@@ -3,10 +3,10 @@ import { PersonCircle } from "@styled-icons/bootstrap/PersonCircle";
 import { CheckCircle } from "@styled-icons/bootstrap/CheckCircle";
 import { ExclamationCircle } from "@styled-icons/bootstrap/ExclamationCircle";
 import { ChangeEvent } from "react";
-import Section from "./components/Section";
-import { Commit, Issue } from "./types/gitlabDataTypes";
-import getUniqueCommitContributors from "./utils/getUniqueCommitContributors";
-import useSessionStorage from "./utils/useSessionStorage";
+import Section from "./Section";
+import { Commit, Issue } from "../types/gitlabDataTypes";
+import getUniqueCommitContributors from "../utils/getUniqueCommitContributors";
+import useSessionStorage from "../utils/useSessionStorage";
 
 const DataParagraph = styled.p`
   display: inline;
