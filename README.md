@@ -1,7 +1,5 @@
 # Project 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using node v14.17.0 and npm 6.14.13.
-
 ## 👩‍💻 Setup and development
 
 **NB! The environment variables need to be set before running the project for correct data fetching.**
@@ -43,19 +41,11 @@ After the variables are set, the relevant commands are:
 
 ### Content and feature requirements
 
-#### Page elements and design
-
-The application consists of several page elements:
-
-- Title bar with theme button changing theme mode
-- Summary of the statistics with a time scope menu
-- Statistics
-
 #### HTML Web Storage
 
-We found it suitable persisting a user's theme preference, as this is something many feel strongly about. For this we used local storage. The implementation is in the form of a custom hook based on [this snippet](https://usehooks.com/useLocalStorage/). A custom hook provides readability, and can also be reused if we were to introduce more variables to save in local storage.
+We found it suitable using local storage for user's theme preference, as this is something a user may want to persist after re-entering the application after closing the browser. The implementation was in the form of a custom hook based on [this snippet](https://usehooks.com/useLocalStorage/). A custom hook provides readability, and can also be reused if we were to introduce more variables to save in local storage.
 
-We used session storage for storing the user's selected time scope of GitLab statistics. The code and functionality was very similar to the aforementioned hook, so much of the code could be reused. Storing the setting in session storage made sure that the selected time scope in the dropdown menu stays selected when the user refreshes the page for the duration of the session. Without session storage the time scope would reset to the default every time the page loads.
+We used session storage for storing the user's selected time scope of GitLab statistics. The code and functionality was very similar to the aforementioned hook, so much of the code could be reused. Storing the setting in session storage made sure that the selected time scope in the dropdown menu stays selected when the user refreshes the page for the duration of the session.
 
 #### Presenting GitLab data parameterized
 
@@ -69,8 +59,6 @@ Instead, we do all the data fetching when the app mounts. Then we filter the dat
 
 #### React with TypeScript
 
-The project uses the latest versions of [React](https://reactjs.org/) and [TypeScript](https://www.typescriptlang.org/) at the time of development.
-
 Typescript may be challenging to use, but has multiple [benefits](https://blog.bitsrc.io/5-strong-reasons-to-use-typescript-with-react-bc987da5d907), such has predictability of values. In many cases types and interfaces are [similar](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces). For our use interfaces satisfied our needs, so we consistently made use of them. We made a folder `types` to group interfaces and enums we reused.
 
 [Traditionally](https://www.twilio.com/blog/react-choose-functional-components) class components were used to handle state with option to define lifecycle methods, while functional components (FC) were used for presentation. This distinction does not stand with the arrival of hooks for state management and life cycle methods. In large we used FC, as it includes less boilerplate code, it avoids the confusing this-term and in sum can be more readable.
@@ -78,14 +66,6 @@ Typescript may be challenging to use, but has multiple [benefits](https://blog.b
 We used a class component in `App`. It acts as a parent component, fetching data in the lifecycle method `componentDidMount`. In a FC `useEffect` can be used to control the traditional life cycle methods. For example in `Statistics` we used `useEffect` to listen for changes in the data sent from `App`, which corresponds with CC's `componentDidUpdate`.
 
 Since this was not a large app, we didn't feel the need to create a global store for the data fetching. Instead we drilled down the data from `App` and down the components using props. On the other hand, it was useful to utilize the context API for the theme toogling, as this affected all the styles.
-
-External libraries/components used are:
-
-- [Highcharts](https://www.npmjs.com/package/highcharts) to render statistics in charts
-- [styled-components](https://styled-components.com/) for easier customization of React components
-- [Dotenv](https://github.com/motdotla/dotenv) for environment variables/project secrets
-- [Husky](https://typicode.github.io/husky/) for Git hooks
-- [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) for formatting checks and code linting
 
 #### Fetching GitLab data
 
@@ -115,6 +95,6 @@ For each device that we tested, we ran the web application and ensured that it b
 
 ## ⚗️ Code quality and use of Git
 
-We made use of the formatting tools [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) to ensure a common coding style and good code quality. These were enforced with a pre-commit hook using [Husky](https://typicode.github.io/husky/) and a CI-pipeline on pull request and after merge. We also ran the test script in the pipeline to make sure functionality was as expected. We strived to extract logical groupings into their own components, and adding the components in their own folder `src/components`. Some functions were extracted into a `src/util` folder for reuse or to avoid cumbersome files. We strived to make variable- and function names descriptive, and also added comments for clarity.
+We made use of the formatting tools [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) to ensure a common coding style and good code quality. These were enforced with a [pre-commit hook](https://typicode.github.io/husky/) and a CI-pipeline on pull request and after merge. We also ran the test script in the pipeline to make sure functionality was as expected. We strived to extract logical groupings into their own components, and adding the components in their own folder `src/components`. Some functions were extracted into a `src/util` folder for reuse or to avoid cumbersome files. We strived to make variable- and function names descriptive, and also added comments for clarity.
 
 We had a early meeting planning each project requirement decomposed them into functional user stories or technical user stories. In development we strived following [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/), describing commit messages in a common way and linking them to issues.
