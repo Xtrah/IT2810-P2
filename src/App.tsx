@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ThemeProvider } from "./styles/ThemeProvider";
 import GlobalStyles from "./styles/global";
@@ -6,7 +5,6 @@ import Navbar from "./components/Navbar";
 import getGitlabData from "./utils/getGitlabData";
 import Statistics from "./components/Statistics";
 import { Commit, Issue } from "./types/gitlabDataTypes";
-
 
 interface State {
   issuesData: Issue[];
