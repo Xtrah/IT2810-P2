@@ -99,7 +99,7 @@ We chose to use the built in function `fetch` for [data fetching](https://www.ge
 
 #### Responsive layout
 
-To make the layout of our web application responsive, we included a number of features to ensure flexibility in terms of scaling. Media queries were used to create breakpoints for differnet screen sizes and we used percentages to make the width of content wrappers dynamic. We chose to use a single breakpoint at `960px`. For the statistics, Highcharts already included dynamic scaling. Our solution has made the website easy to navigate and use when the screens become small, such as on a phone or small tablet.
+To make the layout of our web application responsive, we included a number of features to ensure flexibility in terms of scaling. Media queries were used to create breakpoints for differnet screen sizes and we used percentages to make the width of content wrappers dynamic. Additionally we used flexbox to implement dynamic layouts using automatic wrapping and alignment. We chose to use only a single breakpoint at `960px`. For the statistics, Highcharts already included dynamic scaling. Our solution has made the website easy to navigate and use when the screens become small, such as on a phone or small tablet.
 
 Furthermore, we did not use viewport when creating and styling the layout of our web application. We came up with solutions we felt were solid in terms of responsiveness and scalability, and when we started considering using viewport, we concluded that this would require too much additional work to justify implemeting it.
 
