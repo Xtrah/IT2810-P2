@@ -116,7 +116,13 @@ An easy, useful test is checking whether the app crashes. To do this, we used th
 
 ### Testing UI and responsiveness
 
-Testing on 3 different devices.
+We wanted the phones and tablets with the most common screen aspect ratios to be supported. To achieve this we had to test the responsivenss of the UI throughly.
+
+The testing was performed using chrome and safari. Using the chrome inspection tool, we tested mobile and tablet screen aspect ratios. This is a limited tool, but we consider it to be good enough for our application. From the project requirements we focused on testing on an ordinary pc screen and a phone in both horizontal and vertical orientation.
+
+For each device that we tested, we ran the web application and ensured that it behaved as intended. If it did not, we rewrote code and checked if it still worked for the previously tested aspect ratios. We also ensured that the website behaved well when dynamically changing the window size.
+
+In addition to only testing devices and screen sizes using the chrome inspection tool, we also tested the application on an iPhone 12 using both chrome and safari.
 
 ## ⚗️ Code quality and use of Git
 
